@@ -5,25 +5,33 @@ const SETTINGS_KEY = 'kdp_settings';
 
 export const BOOK_MODELS: Record<string, { type: string; qty: number }[]> = {
   coloring_book: [
+    { type: 'couverture', qty: 1 },
     { type: 'appartenance', qty: 1 }, { type: 'page_titre', qty: 1 }, { type: 'introduction', qty: 1 },
     { type: 'coloriage', qty: 24 }, { type: 'stickers', qty: 2 }, { type: 'certificat', qty: 1 }, { type: 'page_finale', qty: 1 },
+    { type: 'quatrieme_couverture', qty: 1 },
   ],
   activity_book: [
+    { type: 'couverture', qty: 1 },
     { type: 'appartenance', qty: 1 }, { type: 'page_titre', qty: 1 }, { type: 'introduction', qty: 1 },
     { type: 'instructions', qty: 1 }, { type: 'carte_globale', qty: 1 }, { type: 'ouverture_theme', qty: 4 },
     { type: 'coloriage', qty: 10 }, { type: 'labyrinthe', qty: 3 }, { type: 'cherche_et_trouve', qty: 2 },
     { type: 'relier', qty: 3 }, { type: 'mini_activite', qty: 4 }, { type: 'mini_priere', qty: 4 },
     { type: 'certificat', qty: 1 }, { type: 'page_finale', qty: 1 },
+    { type: 'quatrieme_couverture', qty: 1 },
   ],
   character_book: [
+    { type: 'couverture', qty: 1 },
     { type: 'appartenance', qty: 1 }, { type: 'page_titre', qty: 1 }, { type: 'introduction', qty: 1 },
     { type: 'fiche_personnage', qty: 12 }, { type: 'coloriage', qty: 12 },
     { type: 'mini_priere', qty: 3 }, { type: 'certificat', qty: 1 }, { type: 'page_finale', qty: 1 },
+    { type: 'quatrieme_couverture', qty: 1 },
   ],
   themed_book: [
+    { type: 'couverture', qty: 1 },
     { type: 'appartenance', qty: 1 }, { type: 'page_titre', qty: 1 }, { type: 'introduction', qty: 1 },
     { type: 'ouverture_theme', qty: 1 }, { type: 'coloriage', qty: 18 }, { type: 'mini_activite', qty: 4 },
     { type: 'mini_priere', qty: 3 }, { type: 'stickers', qty: 2 }, { type: 'certificat', qty: 1 }, { type: 'page_finale', qty: 1 },
+    { type: 'quatrieme_couverture', qty: 1 },
   ],
 };
 
@@ -62,7 +70,7 @@ export function getSettings(): Settings {
   try {
     return JSON.parse(localStorage.getItem(SETTINGS_KEY) || '{}');
   } catch {
-    return { wf1_url: '', wf2_url: '', wf3_url: '', drive_folder_default: '', sheet_id: '' };
+    return { wf1_url: '', wf2_url: '', wf3_url: '', wf_delete_url: '', drive_folder_default: '', sheet_id: '' };
   }
 }
 
